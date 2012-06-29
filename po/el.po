@@ -9,15 +9,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/\n"
-"POT-Creation-Date: 2011-01-13 21:08+0200\n"
-"PO-Revision-Date: 2011-01-13 21:09+0200\n"
-"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=byzanz&component=general\n"
+"POT-Creation-Date: 2011-02-21 18:35+0000\n"
+"PO-Revision-Date: 2012-06-29 11:18+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
@@ -28,7 +28,7 @@ msgid "If set, Byzanz will record audio from the default audio device if the for
 msgstr "Αν ενεργοποιηθεί, το Byzanz θα πραγματοποιήσει εγγραφή ήχου από την προεπιλεγμένη συσκευή ήχου, αν υποστηρίζεται από την μορφή που έχετε επιλέξει. Αυτό επιτρέπει την ηχητική περιγραφή ταυτόχρονα με την εγγραφή"
 
 #: ../src/byzanz.schemas.in.h:2
-#: ../src/byzanzapplet.c:294
+#: ../src/byzanzapplet.c:292
 #: ../src/record.c:40
 msgid "Record audio"
 msgstr "Ηχογράφηση"
@@ -49,48 +49,48 @@ msgstr "Το URI για το όνομα του αρχείου θα προταθ�
 msgid "Use this method as the default method for recording. Must be one of \"screen\" for recording the whole screen, \"area\" for selecting an area or \"window\" to select a window."
 msgstr "Χρησιμοποιήστε αυτή τη μέθοδο σαν την προεπιλεγμένη μέθοδο για εγγραφή. Πρέπει να είναι μια από τις: \"οθόνη\" για εγγραφή ολόκληρης της οθόνης,  \"περιοχή\" για επιλογή μιας περιοχής ή \"παράθυρο\" για επιλογή παραθύρου."
 
-#: ../src/byzanzapplet.c:103
-#: ../src/byzanzapplet.c:268
+#: ../src/byzanzapplet.c:102
+#: ../src/byzanzapplet.c:266
 msgid "Record your desktop"
 msgstr "Εγγραφή της επιφάνειας εργασίας σας"
 
-#: ../src/byzanzapplet.c:104
+#: ../src/byzanzapplet.c:103
 msgid "Select area to record"
 msgstr "Επιλέξτε την περιοχή για να κάνετε εγγραφή"
 
-#: ../src/byzanzapplet.c:105
+#: ../src/byzanzapplet.c:104
 msgid "End current recording"
 msgstr "Διακοπή τρέχουσας εγγραφής"
 
-#: ../src/byzanzapplet.c:106
+#: ../src/byzanzapplet.c:105
 msgid "Abort encoding of recording"
 msgstr "Διακοπή κωδικοποίησης της εγγραφής"
 
-#: ../src/byzanzapplet.c:278
+#: ../src/byzanzapplet.c:276
 msgid "All files"
 msgstr "Όλα τα αρχεία"
 
-#: ../src/byzanzapplet.c:368
+#: ../src/byzanzapplet.c:366
 msgid "Desktop Session"
 msgstr "Συνεδρία επιφάνειας εργασίας"
 
-#: ../src/byzanzapplet.c:371
+#: ../src/byzanzapplet.c:369
 msgid "Record what's happening on your desktop"
 msgstr "Καταγραφή των συμβάντων της επιφάνειας εργασίας σας"
 
-#: ../src/byzanzapplet.c:373
+#: ../src/byzanzapplet.c:371
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα του Gnome\n"
 "\n"
 "Γιάννης Κατσαμπίρης <giannis1_86@hotmail.com>"
 
-#: ../src/byzanzapplet.c:378
+#: ../src/byzanzapplet.c:376
 msgid "_About"
 msgstr "_Περί"
 
 #: ../src/byzanzencoder.c:89
-#: ../src/byzanzencodergstreamer.c:118
+#: ../src/byzanzencodergstreamer.c:127
 msgid "This format does not support recording audio."
 msgstr "Αυτή η μορφή δεν υποστηρίζει την εγγραφή ήχου."
 
@@ -110,7 +110,7 @@ msgstr "Δεν υπάρχει εικόνα προς κωδικοποίηση"
 msgid "GIF images"
 msgstr "Εικόνες GIF"
 
-#: ../src/byzanzencodergstreamer.c:156
+#: ../src/byzanzencodergstreamer.c:165
 msgid "Failed to start GStreamer pipeline"
 msgstr "Αποτυχία εκκίνησης του Gstreamer pipeline"
 
@@ -118,27 +118,32 @@ msgstr "Αποτυχία εκκίνησης του Gstreamer pipeline"
 msgid "Theora video"
 msgstr "Βίντεο Theora"
 
-#: ../src/byzanzselect.c:354
+#: ../src/byzanzencoderwebm.c:38
+#| msgid "Theora video"
+msgid "WebM video"
+msgstr "Βίντεο WebM"
+
+#: ../src/byzanzselect.c:357
 msgid "Record _Desktop"
 msgstr "Εγγραφή επι_φάνειας εργασίας"
 
-#: ../src/byzanzselect.c:354
+#: ../src/byzanzselect.c:357
 msgid "Record the entire desktop"
 msgstr "Εγγραφή ολόκληρης της επιφάνειας εργασίας"
 
-#: ../src/byzanzselect.c:356
+#: ../src/byzanzselect.c:359
 msgid "Record _Area"
 msgstr "Εγγραφή πε_ριοχής"
 
-#: ../src/byzanzselect.c:356
+#: ../src/byzanzselect.c:359
 msgid "Record a selected area of the desktop"
 msgstr "Εγγραφή επιλεγμένης περιοχής της επιφάνειας εργασίας"
 
-#: ../src/byzanzselect.c:358
+#: ../src/byzanzselect.c:361
 msgid "Record _Window"
 msgstr "Εγγραφή παρα_θύρου"
 
-#: ../src/byzanzselect.c:358
+#: ../src/byzanzselect.c:361
 msgid "Record a selected window"
 msgstr "Εγγραφή επιλεγμένου παραθύρου"
 
@@ -166,7 +171,7 @@ msgid "process a Byzanz debug recording"
 msgstr "Επεξεργασία εγγραφής αποσφαλμάτωσης του Byzanz"
 
 #: ../src/playback.c:84
-#: ../src/record.c:140
+#: ../src/record.c:143
 #, c-format
 msgid "Wrong option: %s\n"
 msgstr "Λανθασμένη επιλογή: %s\n"
@@ -238,11 +243,11 @@ msgstr "Η εγγραφή ολοκληρώθηκε. Γίνεται ολοκλή�
 msgid "Recording starts. Will record %d seconds...\n"
 msgstr "Η εγγραφή ξεκινά. Θα διαρκέσει %d δευτερόλεπτα...\n"
 
-#: ../src/record.c:132
+#: ../src/record.c:135
 msgid "record your current desktop session"
 msgstr "εγγραφή της τρέχουσας συνεδρίας της επιφάνειας εργασίας σας"
 
-#: ../src/record.c:149
+#: ../src/record.c:152
 #, c-format
 msgid "Given area is not inside desktop.\n"
 msgstr "Η περιοχή που ορίσατε είναι εκτός επιφάνειας εργασίας.\n"
