@@ -1,0 +1,14 @@
+byzanz for Debian
+-----------------
+
+Note for non-Gnome users:
+
+Running this program would usually create an applet in the Gnome Panel, but
+since the KDE Panel is not compatible, you have to use it as a command line
+tool. It still has the same functionality but you won't see an icon in your
+systray or a program starting when running byzanz from the menu in a
+non-Gnome-environment.
+
+You can Use byzanz-record directly in this case.
+
+ -- Bastian Venthur <venthur@debian.org>, 2010-05-04

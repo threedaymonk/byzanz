@@ -1,0 +1,18 @@
+Source: byzanz
+Section: graphics
+Priority: optional
+Maintainer: Bastian Venthur <venthur@debian.org>
+Build-Depends: debhelper (>= 5.0.0), gnome-common, libglib2.0-dev, libgconf2-dev, libcairo2-dev, libgtk-3-dev, libx11-dev, libpanel-applet-4-dev, libgstreamer0.10-dev, libgstreamer-plugins-base0.10-dev, pkg-config, libfreetype6-dev
+Standards-Version: 3.8.4
+Homepage: http://people.freedesktop.org/~company/byzanz
+VCS-git: git://git.gnome.org/byzanz
+
+Package: byzanz
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Small screencast creator
+ Byzanz is an applet allowing you to record your current desktop or parts of it
+ to an animated GIF, Ogg Theora or Flash. This is especially useful for
+ publishing on the web.
+ .
+ Byzanz also allows recording of audio, when the output format supports it.
