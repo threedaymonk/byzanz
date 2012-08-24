@@ -52,3 +52,10 @@ src/byzanzmarshal.h
 src/org.gnome.ByzanzApplet.panel-applet
 src/org.gnome.ByzanzApplet.panel-applet.in
 src/org.gnome.panel.applet.ByzanzAppletFactory.service
+
+# deb packaging
+build-stamp
+debian/*.log
+debian/*.substvars
+debian/byzanz
+debian/files
