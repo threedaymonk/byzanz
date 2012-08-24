@@ -24,6 +24,7 @@
 #include "byzanzlayercursor.h"
 
 #include <gdk/gdkx.h>
+#include <stdint.h>
 
 G_DEFINE_TYPE (ByzanzLayerCursor, byzanz_layer_cursor, BYZANZ_TYPE_LAYER)
 
@@ -145,6 +146,19 @@ byzanz_layer_cursor_snapshot (ByzanzLayer *layer)
   return region;
 }
 
+static uint32_t*
+uint32_pixels_from_cursor(XFixesCursorImage *cursor)
+{
+  int i;
+  uint32_t *pixels = g_malloc(cursor->width * cursor->height * sizeof(uint32_t));
+
+  for (i = 0; i < (cursor->height * cursor->width); i++) {
+    pixels[i] = (uint32_t)cursor->pixels[i];
+  }
+
+  return pixels;
+}
+
 static void
 byzanz_layer_cursor_render (ByzanzLayer *layer,
                             cairo_t *    cr)
@@ -152,31 +166,27 @@ byzanz_layer_cursor_render (ByzanzLayer *layer,
   ByzanzLayerCursor *clayer = BYZANZ_LAYER_CURSOR (layer);
   XFixesCursorImage *cursor = clayer->cursor;
   cairo_surface_t *cursor_surface;
+  uint32_t *pixels;
 
   if (clayer->cursor == NULL)
     return;
 
-  cursor_surface = cairo_image_surface_create_for_data ((guchar *) cursor->pixels,
-      CAIRO_FORMAT_ARGB32, cursor->width * sizeof (unsigned long) / 4, cursor->height,
-      cursor->width * sizeof (unsigned long));
+  pixels = uint32_pixels_from_cursor(cursor);
+  if (pixels == NULL)
+    return;
+
+  cursor_surface = cairo_image_surface_create_for_data ((guchar *) pixels,
+      CAIRO_FORMAT_ARGB32, cursor->width, cursor->height, cursor->width * 4);
   
   cairo_save (cr);
+  cairo_translate (cr, clayer->cursor_x, clayer->cursor_y);
+  cairo_set_source_surface (cr, cursor_surface, -(double) cursor->xhot, -(double) cursor->yhot);
 
-  cairo_translate (cr, clayer->cursor_x - cursor->xhot, clayer->cursor_y - cursor->yhot);
-
-  /* This is neeed to map an unsigned long array to a uint32_t array */
-  cairo_scale (cr, 4.0 / sizeof (unsigned long), 1);
-#if G_BYTE_ORDER == G_BIG_ENDIAN
-  cairo_translate (cr, (4.0 - sizeof (unsigned long)) / sizeof (unsigned long), 0);
-#endif
-
-  cairo_set_source_surface (cr, cursor_surface, 0, 0);
-  /* Next line is also neeed for mapping the unsigned long array to a uint32_t array */
-  cairo_pattern_set_filter (cairo_get_source (cr), CAIRO_FILTER_NEAREST);
   cairo_paint (cr);
   cairo_restore (cr);
 
   cairo_surface_destroy (cursor_surface);
+  g_free(pixels);
 }
 
 static void
