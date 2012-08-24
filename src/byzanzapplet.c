@@ -21,6 +21,7 @@
 #  include "config.h"
 #endif
 
+#include <stdlib.h>
 #include <unistd.h>
 
 #include <panel-applet.h>
