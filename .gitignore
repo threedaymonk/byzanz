@@ -48,3 +48,7 @@ src/byzanz.schemas
 src/byzanzmarshal.c
 src/byzanzmarshal.h
 
+# intermediate panel applet files
+src/org.gnome.ByzanzApplet.panel-applet
+src/org.gnome.ByzanzApplet.panel-applet.in
+src/org.gnome.panel.applet.ByzanzAppletFactory.service
